@@ -1,0 +1,1 @@
+console.log(Math.flutiloor((Math.random() * 20) + 1)); // generate random number between 0 and 19, then sum 1
