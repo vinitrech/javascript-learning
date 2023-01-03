@@ -1,5 +1,6 @@
 //small text file stored on the computer
-//data in cookies is stores in a key value pair
+//data in cookies_local_storage is stores in a key value pair
+//Cookies are primarily for reading server-side
 
 console.log(navigator.cookieEnabled)
 document.cookie = "firstName=RandomName; expires=Sun, 1 Janurary 2030 12:00:00 UTC; path=/";
