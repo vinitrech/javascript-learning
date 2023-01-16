@@ -1,3 +1,5 @@
+// Objects are passed by reference, primitive types are passed by value
+
 const car = {
     model: "Mustang",
     color: "Red",
