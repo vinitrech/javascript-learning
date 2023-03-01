@@ -27,3 +27,22 @@ const wait = (time) => new Promise(resolve => {
 });
 
 wait(5000).then(() => console.log("Completed"));
+
+// Set max execution time for promise with aux promise
+async function fulfillWithTimelimit(timeLimit, task, failureValue) {
+    let timeout;
+
+    const timeoutPromise = new Promise((resolve, reject) => {
+        timeout = setTimeout(() => {
+            resolve(failureValue)
+        }, timeLimit);
+    });
+
+    const response = await Promise.race([task, timeoutPromise]);
+
+    if (timeout) {
+        clearTimeout(timeout);
+    }
+
+    return response;
+}
